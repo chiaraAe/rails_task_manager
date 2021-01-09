@@ -1,0 +1,16 @@
+<h1>Tasks</h1>
+<ul style="list-style-type:none;">
+  <% @tasks.each do |task| %> 
+    <li>
+      <% if task.completed == false %>
+        <%= "[ ]"  %>
+      <% else %>
+        <%= "[x]" %>
+      <% end %>
+      <%=link_to task.title, task_path(task) %> 
+    </li> 
+    <% end %>
+</ul>
+
+
+<%=link_to "Create new task", tasks_new_path %>
